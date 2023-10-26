@@ -1653,13 +1653,13 @@ static Result Cheat_MapMemoryAndApplyCheat(u32 pid, CheatDescription* const chea
         }
         else
         {
-            sprintf(failureReason, "Debug process failed");
+            sprintf(failureReason, "Debug pwocess nono");
             svcCloseHandle(processHandle);
         }
     }
     else
     {
-        sprintf(failureReason, "Open process failed");
+        sprintf(failureReason, "Owopen pwocess nono");
     }
     return res;
 }

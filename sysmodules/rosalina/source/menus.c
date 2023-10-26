@@ -49,7 +49,7 @@ Menu rosalinaMenu = {
         { "pwoduce scweenshot", METHOD, .method = &RosalinaMenu_TakeScreenshot },
         { "Change scween bwightnwess", METHOD, .method = &RosalinaMenu_ChangeScreenBrightness },
         { "Chets...", METHOD, .method = &RosalinaMenu_Cheats },
-        { "", METHOD, .method = PluginLoader__MenuCallback},
+        { "Pwugwins", METHOD, .method = PluginLoader__MenuCallback},
         { "Pwocess wist", METHOD, .method = &RosalinaMenu_ProcessList },
         { "Debwugger optins...", MENU, .menu = &debuggerMenu },
         { "Cistem cuntfiguration...", MENU, .menu = &sysconfigMenu },
@@ -87,9 +87,9 @@ void RosalinaMenu_SaveSettings(void)
         Draw_Lock();
         Draw_DrawString(10, 10, COLOR_TITLE, "Save settings");
         if(R_SUCCEEDED(res))
-            Draw_DrawString(10, 30, COLOR_WHITE, "Operation succeeded.");
+            Draw_DrawString(10, 30, COLOR_WHITE, "Opewation succ!!!!.");
         else
-            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Operation failed (0x%08lx).", res);
+            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Opewation nono (0x%08lx).", res);
         Draw_FlushFramebuffer();
         Draw_Unlock();
     }
@@ -465,13 +465,13 @@ end:
         Draw_Lock();
         Draw_DrawString(10, 10, COLOR_TITLE, "Screenshot");
         if(R_FAILED(res))
-            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Operation failed (0x%08lx).", (u32)res);
+            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Opewation nono (0x%08lx).", (u32)res);
         else
         {
             u32 t1 = (u32)(1000 * timeSpentConvertingScreenshot / SYSCLOCK_ARM11);
             u32 t2 = (u32)(1000 * timeSpentWritingScreenshot / SYSCLOCK_ARM11);
             u32 posY = 30;
-            posY = Draw_DrawString(10, posY, COLOR_WHITE, "Operation succeeded.\n\n");
+            posY = Draw_DrawString(10, posY, COLOR_WHITE, "Opewation succ!!!!.\n\n");
             posY = Draw_DrawFormattedString(10, posY, COLOR_WHITE, "Time spent converting:    %5lums\n", t1);
             posY = Draw_DrawFormattedString(10, posY, COLOR_WHITE, "Time spent writing files: %5lums\n", t2);
         }

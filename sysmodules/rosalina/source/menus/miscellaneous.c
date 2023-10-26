@@ -65,14 +65,14 @@ typedef struct DspFirm {
 } DspFirm;
 
 Menu miscellaneousMenu = {
-    "Miscellaneous options menu",
+    "oter optins menwu",
     {
-        { "Switch the hb. title to the current app.", METHOD, .method = &MiscellaneousMenu_SwitchBoot3dsxTargetTitle },
-        { "Change the menu combo", METHOD, .method = &MiscellaneousMenu_ChangeMenuCombo },
-        { "Start InputRedirection", METHOD, .method = &MiscellaneousMenu_InputRedirection },
-        { "Update time and date via NTP", METHOD, .method = &MiscellaneousMenu_UpdateTimeDateNtp },
-        { "Nullify user time offset", METHOD, .method = &MiscellaneousMenu_NullifyUserTimeOffset },
-        { "Dump DSP firmware", METHOD, .method = &MiscellaneousMenu_DumpDspFirm },
+        { "Switch the hb. tittle to the curwent app.", METHOD, .method = &MiscellaneousMenu_SwitchBoot3dsxTargetTitle },
+        { "Chamge the menwu cwombwo", METHOD, .method = &MiscellaneousMenu_ChangeMenuCombo },
+        { "begwin InputWediwection", METHOD, .method = &MiscellaneousMenu_InputRedirection },
+        { "Update time and date with NTP", METHOD, .method = &MiscellaneousMenu_UpdateTimeDateNtp },
+        { "Nullify wuser time woffset", METHOD, .method = &MiscellaneousMenu_NullifyUserTimeOffset },
+        { "Dump DSP firmwarwe", METHOD, .method = &MiscellaneousMenu_DumpDspFirm },
         {},
     }
 };
@@ -105,7 +105,7 @@ void MiscellaneousMenu_SwitchBoot3dsxTargetTitle(void)
         else
         {
             res = -1;
-            strcpy(failureReason, "no suitable process found");
+            strcpy(failureReason, "no suitable pwocess found");
         }
     }
     else
@@ -127,9 +127,9 @@ void MiscellaneousMenu_SwitchBoot3dsxTargetTitle(void)
         Luma_SharedConfig->hbldr_3dsx_tid = newTid;
 
     if (compareTids(newTid, HBLDR_DEFAULT_3DSX_TID))
-        miscellaneousMenu.items[0].title = "Switch the hb. title to the current app.";
+        miscellaneousMenu.items[0].title = "Switch the hb. tittle to the curwent app.";
     else
-        miscellaneousMenu.items[0].title = "Switch the hb. title to " HBLDR_DEFAULT_3DSX_TITLE_NAME;
+        miscellaneousMenu.items[0].title = "Switch the hb. tittle to " HBLDR_DEFAULT_3DSX_TITLE_NAME;
 
     Draw_Lock();
     Draw_ClearFramebuffer();
@@ -138,12 +138,12 @@ void MiscellaneousMenu_SwitchBoot3dsxTargetTitle(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optins menwu");
 
         if(R_SUCCEEDED(res))
-            Draw_DrawString(10, 30, COLOR_WHITE, "Operation succeeded.");
+            Draw_DrawString(10, 30, COLOR_WHITE, "Opewation succ!!!.");
         else
-            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Operation failed (%s).", failureReason);
+            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Opewation nono (%s).", failureReason);
 
         Draw_FlushFramebuffer();
         Draw_Unlock();
@@ -164,9 +164,9 @@ void MiscellaneousMenu_ChangeMenuCombo(void)
     LumaConfig_ConvertComboToString(comboStrOrig, menuCombo);
 
     Draw_Lock();
-    Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+    Draw_DrawString(10, 10, COLOR_TITLE, "oter optins menwu");
 
-    posY = Draw_DrawFormattedString(10, 30, COLOR_WHITE, "The current menu combo is:  %s", comboStrOrig);
+    posY = Draw_DrawFormattedString(10, 30, COLOR_WHITE, "The curwent menwu combo is:  %s", comboStrOrig);
     posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "Please enter the new combo:");
 
     menuCombo = waitCombo();
@@ -175,12 +175,12 @@ void MiscellaneousMenu_ChangeMenuCombo(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optins menwu");
 
-        posY = Draw_DrawFormattedString(10, 30, COLOR_WHITE, "The current menu combo is:  %s", comboStrOrig);
+        posY = Draw_DrawFormattedString(10, 30, COLOR_WHITE, "The curwent menwu combo is:  %s", comboStrOrig);
         posY = Draw_DrawFormattedString(10, posY + SPACING_Y, COLOR_WHITE, "Please enter the new combo: %s", comboStr) + SPACING_Y;
 
-        posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "Successfully changed the menu combo.");
+        posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_LIME, "Succ! changed the menwu combo.");
 
         Draw_FlushFramebuffer();
         Draw_Unlock();
@@ -201,9 +201,9 @@ void MiscellaneousMenu_InputRedirection(void)
     {
         res = InputRedirection_Disable(5 * 1000 * 1000 * 1000LL);
         if(res != 0)
-            sprintf(buf, "Failed to stop InputRedirection (0x%08lx).", (u32)res);
+            sprintf(buf, "nono to stop InputWediwection (0x%08lx).", (u32)res);
         else
-            miscellaneousMenu.items[2].title = "Start InputRedirection";
+            miscellaneousMenu.items[2].title = "Start InputWediwection";
     }
     else
     {
@@ -231,13 +231,13 @@ void MiscellaneousMenu_InputRedirection(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optins menwu");
 
         if(!wasEnabled && cantStart)
-            Draw_DrawString(10, 30, COLOR_WHITE, "Can't start the input redirection before the system\nhas finished loading.");
+            Draw_DrawString(10, 30, COLOR_WHITE, "Can't start the input wediwection before the system\nhas finished loading.");
         else if(!wasEnabled)
         {
-            Draw_DrawString(10, 30, COLOR_WHITE, "Starting InputRedirection...");
+            Draw_DrawString(10, 30, COLOR_WHITE, "Starting InputWediwection...");
             if(!done)
             {
                 res = InputRedirection_DoOrUndoPatches();
@@ -262,15 +262,15 @@ void MiscellaneousMenu_InputRedirection(void)
                 }
 
                 if(res != 0)
-                    sprintf(buf, "Starting InputRedirection... failed (0x%08lx).", (u32)res);
+                    sprintf(buf, "Starting InputWediwection... nono (0x%08lx).", (u32)res);
                 else
-                    miscellaneousMenu.items[2].title = "Stop InputRedirection";
+                    miscellaneousMenu.items[2].title = "Stop InputWediwection";
 
                 done = true;
             }
 
             if(res == 0)
-                Draw_DrawString(10, 30, COLOR_WHITE, "Starting InputRedirection... OK.");
+                Draw_DrawString(10, 30, COLOR_WHITE, "Starting InputWediwection... OK.");
             else
                 Draw_DrawString(10, 30, COLOR_WHITE, buf);
         }
@@ -279,14 +279,14 @@ void MiscellaneousMenu_InputRedirection(void)
             if(res == 0)
             {
                 u32 posY = 30;
-                posY = Draw_DrawString(10, posY, COLOR_WHITE, "InputRedirection stopped successfully.\n\n");
+                posY = Draw_DrawString(10, posY, COLOR_WHITE, "InputWediwection stopped successfully.\n\n");
                 if (isN3DS)
                 {
                     posY = Draw_DrawString(
                         10,
                         posY,
                         COLOR_WHITE,
-                        "This might cause a key press to be repeated in\n"
+                        "This might cause a key press to be wepeated in\n"
                         "Home Menu for no reason.\n\n"
                         "Just pressing ZL/ZR on the console is enough to fix\nthis.\n"
                     );
@@ -324,7 +324,7 @@ void MiscellaneousMenu_UpdateTimeDateNtp(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optin menwu");
 
         absOffset = utcOffset - 12;
         absOffset = absOffset < 0 ? -absOffset : absOffset;
@@ -364,7 +364,7 @@ void MiscellaneousMenu_UpdateTimeDateNtp(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optin menwu");
 
         absOffset = utcOffset;
         absOffset = absOffset < 0 ? -absOffset : absOffset;
@@ -372,7 +372,7 @@ void MiscellaneousMenu_UpdateTimeDateNtp(void)
         if (cantStart)
             Draw_DrawFormattedString(10, posY + 2 * SPACING_Y, COLOR_WHITE, "Can't sync time/date before the system\nhas finished loading.") + SPACING_Y;
         else if (R_FAILED(res))
-            Draw_DrawFormattedString(10, posY + 2 * SPACING_Y, COLOR_WHITE, "Operation failed (%08lx).", (u32)res) + SPACING_Y;
+            Draw_DrawFormattedString(10, posY + 2 * SPACING_Y, COLOR_WHITE, "Opewation nono (%08lx).", (u32)res) + SPACING_Y;
         else
             Draw_DrawFormattedString(10, posY + 2 * SPACING_Y, COLOR_WHITE, "Time/date updated successfully.") + SPACING_Y;
 
@@ -397,11 +397,11 @@ void MiscellaneousMenu_NullifyUserTimeOffset(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optin menwu");
         if(R_SUCCEEDED(res))
-            Draw_DrawString(10, 30, COLOR_WHITE, "Operation succeeded.\n\nPlease reboot to finalize the changes.");
+            Draw_DrawString(10, 30, COLOR_WHITE, "Opewation succ!!!.\n\nPlease reboot to finalize the changes.");
         else
-            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Operation failed (0x%08lx).", res);
+            Draw_DrawFormattedString(10, 30, COLOR_WHITE, "Opewation nono (0x%08lx).", res);
         Draw_FlushFramebuffer();
         Draw_Unlock();
     }
@@ -476,13 +476,13 @@ void MiscellaneousMenu_DumpDspFirm(void)
     do
     {
         Draw_Lock();
-        Draw_DrawString(10, 10, COLOR_TITLE, "Miscellaneous options menu");
+        Draw_DrawString(10, 10, COLOR_TITLE, "oter optin menwu");
         if(R_SUCCEEDED(res))
             Draw_DrawString(10, 30, COLOR_WHITE, "DSP firm. successfully written to /3ds/dspfirm.cdc\non the SD card.");
         else
             Draw_DrawFormattedString(
                 10, 30, COLOR_WHITE,
-                "Operation failed (0x%08lx).\n\nMake sure that Home Menu is running and that your\nSD card is inserted.",
+                "Opewation nono (0x%08lx).\n\nMake sure that Home Menu is running and that your\nSD card is inserted.",
                 res
             );
         Draw_FlushFramebuffer();

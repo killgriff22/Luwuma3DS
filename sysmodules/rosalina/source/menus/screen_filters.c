@@ -139,19 +139,19 @@ static void ScreenFiltersMenu_SetCct(u16 cct)
 }
 
 Menu screenFiltersMenu = {
-    "Screen filters menu",
+    "Scween fwiltes menwu",
     {
-        { "[6500K] Default temperature", METHOD, .method = &ScreenFiltersMenu_SetDefault },
-        { "[10000K] Aquarium", METHOD, .method = &ScreenFiltersMenu_SetAquarium },
-        { "[7500K] Overcast Sky", METHOD, .method = &ScreenFiltersMenu_SetOvercastSky },
-        { "[5500K] Daylight", METHOD, .method = &ScreenFiltersMenu_SetDaylight },
-        { "[4200K] Fluorescent", METHOD, .method = &ScreenFiltersMenu_SetFluorescent },
-        { "[3400K] Halogen", METHOD, .method = &ScreenFiltersMenu_SetHalogen },
+        { "[6500K] Default tempewature", METHOD, .method = &ScreenFiltersMenu_SetDefault },
+        { "[10000K] Aquawium", METHOD, .method = &ScreenFiltersMenu_SetAquarium },
+        { "[7500K] Ovewcast Sky", METHOD, .method = &ScreenFiltersMenu_SetOvercastSky },
+        { "[5500K] Daywight", METHOD, .method = &ScreenFiltersMenu_SetDaylight },
+        { "[4200K] Flwowescent", METHOD, .method = &ScreenFiltersMenu_SetFluorescent },
+        { "[3400K] Hawogen", METHOD, .method = &ScreenFiltersMenu_SetHalogen },
         { "[2700K] Incandescent", METHOD, .method = &ScreenFiltersMenu_SetIncandescent },
-        { "[2300K] Warm Incandescent", METHOD, .method = &ScreenFiltersMenu_SetWarmIncandescent },
-        { "[1900K] Candle", METHOD, .method = &ScreenFiltersMenu_SetCandle },
+        { "[2300K] Wawm Incandescent", METHOD, .method = &ScreenFiltersMenu_SetWarmIncandescent },
+        { "[1900K] Camdle", METHOD, .method = &ScreenFiltersMenu_SetCandle },
         { "[1200K] Ember", METHOD, .method = &ScreenFiltersMenu_SetEmber },
-        { "Advanced configuration", METHOD, .method = &ScreenFiltersMenu_AdvancedConfiguration },
+        { "Amdvamced comfiguration", METHOD, .method = &ScreenFiltersMenu_AdvancedConfiguration },
         {},
     }
 };
