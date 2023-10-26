@@ -1,3 +1,9 @@
+# Luwuma3DS
+A uwuspeak translation of Luma3DS
+# CAUTION
+This firmware has a broken sysmodule!!!  
+The wifi module in rosalina will ***ALWAYS FAIL***  
+If you do find a way to activate it, it may cause a stack dump.
 # Luma3DS
 *Noob-proof (N)3DS "Custom Firmware"*
 
